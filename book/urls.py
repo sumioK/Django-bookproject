@@ -3,6 +3,6 @@ from .views import sample, Listview
 
 urlpatterns = [
     path("sample",sample,name='sample'),
-    path("list", Listview.as_view()),
+    path("list/", Listview.as_view()),
     
 ]
