@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 
 {% block title %}
-書籍詳細
+{{ objerct.title }}
 {% endblock title %}
 
+{% block h1 %}
+書籍詳細
+{% endblock h1 %}
+
 {% block content %}
-  <div class="cards">
-    <h5 class="card-header">{{ object.title }}</h5>
-    <div class="card-body">
-      <p class="card-text">{{ object.text }}</p>
-      <a href="{% url 'list-book' %}" class="btn btn-primary">一覧へ</a>
-      <a href="{% url 'update' object.pk %}" class="btn btn-primary">編集</a>
-      <a href="{% url 'delete' object.pk %}" class="btn btn-primary">削除</a>
-      <h6 class="card-title mt-3">カテゴリー:{{ object.category }}</h6>
-    </div>
+  <div class="p-4 m-4 bg-light border border-success rounded">
+    <h2 class="text-success">{{ object.title }}</h2>
+    <p>{{ object.text }}</p>
+    <a href="{% url 'list-book' %}" class="btn btn-primary">一覧へ</a>
+    <a href="{% url 'update' object.pk %}" class="btn btn-primary">編集</a>
+    <a href="{% url 'delete' object.pk %}" class="btn btn-primary">削除</a>
+    <h6 class="card-title mt-3">カテゴリー:{{ object.category }}</h6>
   </div> 
 {% endblock content %}
